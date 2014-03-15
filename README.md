@@ -1,7 +1,8 @@
-codechef
-========
+Codechef Solutions
+==================
 
-solution to practice problems for codechef
+Solution to practice problems on codechef.com
 
-Completed Solutions:
+Completed Solutions
+===================
 TEST
