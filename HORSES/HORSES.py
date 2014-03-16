@@ -14,11 +14,12 @@ def find_diff(int1, int2):
 # [int] -> int
 def min_diff(horseSkills):
     sortedHorses = sorted(horseSkills) # one sort
-    horseDiffs = [] 
-    for i in range(0, len(sortedHorses) - 1):
-        horseDiffs.append(find_diff(sortedHorses[i], sortedHorses[i+1]))
-    sorted(horseDiffs) # second sort
-    return horseDiffs[0]
+    if len(sortedHorses) == 2:
+        return find_diff(sortedHorses[0], sortedHorses[1])
+    else:
+        horseDiffs = [find_diff(sortedHorses[i], sortedHorses[i+1]) for i in range(0, len(sortedHorses) - 2)]
+        sorted(horseDiffs) # second sort
+        return horseDiffs[0]
     
 # File -> iterator([int])
 def parse_input():
