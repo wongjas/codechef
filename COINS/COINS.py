@@ -21,4 +21,4 @@ def max_amount(n):
 
 if __name__ == "__main__":
     for line in fileinput.input():
-        print >> sys.stdout, max_amount()
+        print >> sys.stdout, max_amount(int(line))
