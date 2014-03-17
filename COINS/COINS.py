@@ -21,21 +21,24 @@ def lookup(key):
 # int, int -> None
 def store(key, value):
     calculated[key] = value
- 
+
 # int -> int
 def max_amount(n):
-    print >> sys.stderr, n
     max = lookup(n)
     if max == None:
         coins = exchange(n)
         max = sum(coins) # change to lambda function which is faster
-        store(n, max)
-    if n > max: 
-        return n
+        if n >= max: 
+            return n
+        else:
+            new_max = sum([max_amount(i) for i in coins])
+            store(n, new_max)
+            return new_max
     else:
-        coins = exchange(n)
-        return sum([max_amount(i) for i in coins])
+        return max
+
 
 if __name__ == "__main__":
     for line in fileinput.input():
         print >> sys.stdout, max_amount(int(line))
+
