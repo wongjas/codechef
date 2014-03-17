@@ -16,6 +16,7 @@ class test_COINS(unittest.TestCase):
         self.assertEquals(coins.max_amount(24), 27)
         self.assertEquals(coins.max_amount(12), 13)
         self.assertEquals(coins.max_amount(0), 0)
+        self.assertEquals(coins.max_amount(1000000000), 4243218150) 
 
 if __name__ == "__main__":
     unittest.main()
