@@ -17,8 +17,11 @@ class test_LASTDIG(unittest.TestCase):
         self.assertEquals(last.get_last_digit("12345"), 5)
         
     def test_get_all_sums(self):
-        self.assertEquals(last.get_all_sums("1", "2"), 3)
+        self.assertEquals(last.get_all_sums("1", "2"), 5)
         self.assertEquals(last.get_all_sums("1", "8"), 36)
+        self.assertEquals(last.get_all_sums("28", "138"), 495)
+        self.assertEquals(last.get_all_sums("314159", "314159"), 7)
+        self.assertEquals(last.get_all_sums("0", "0"), 0)
 
 
 if __name__ == "__main__":
